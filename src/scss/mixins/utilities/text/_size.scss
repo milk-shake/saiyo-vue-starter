@@ -1,0 +1,3 @@
+@mixin has-sized-text($size) {
+  font-size: #{map-get($sizes, $size)};
+}

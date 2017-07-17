@@ -1,0 +1,8 @@
+@function findColorInvert($color) {
+  @if colorLuminance($color) > 0.8 {
+    @return rgba(#000, 0.7);
+  }
+  @else {
+    @return #fff;
+  }
+}

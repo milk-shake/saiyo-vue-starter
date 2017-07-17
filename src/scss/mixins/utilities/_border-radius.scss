@@ -1,0 +1,3 @@
+@mixin has-rounded-corners($size) {
+  border-radius: #{map-get($sizes, $size)};
+}

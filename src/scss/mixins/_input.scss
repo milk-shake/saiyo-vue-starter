@@ -1,0 +1,33 @@
+@mixin input {
+  @include control;
+  @include has-colored-bg('white');
+  @include has-border('tiny', 'grey', 'every');
+  @include has-colored-text('black');
+
+  &:hover,
+  &.is-hovered {
+    @include has-border('tiny', 'black', 'every');
+  }
+
+  &:focus,
+  &.is-focused,
+  &:active,
+  &.is-active {
+    @include has-border('tiny', 'primary', 'every');
+  }
+
+  &[disabled] {
+    @include has-colored-bg('grey');
+    @include has-border('tiny', 'grey', 'every');
+    color: rgba(map-get($colors, 'black'), 0.3);
+    box-shadow: none;
+
+    &:after {
+      border-color: black;
+    }
+
+    @include placeholder {
+      color: rgba(map-get($colors, 'black'), 0.3);
+    }
+  }
+}

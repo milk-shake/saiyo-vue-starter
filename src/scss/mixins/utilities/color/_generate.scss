@@ -1,0 +1,12 @@
+@mixin generate-color-classes() {
+  @each $name, $color in $colors {
+    $color-lightning: max(100% - lightness($color) - 2%, 0%);
+
+    &.is-#{$name} {
+      background-color: lighten($color, $color-lightning);
+      color: findColorInvert(lighten($color, $color-lightning));
+
+      @content;
+    }
+  }
+}

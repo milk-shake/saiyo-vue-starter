@@ -1,0 +1,3 @@
+@mixin has-shadow($name) {
+  box-shadow: map-get($shadows, $name);
+}

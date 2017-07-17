@@ -1,0 +1,16 @@
+@mixin has-padding($size, $position) {
+  $p: positions('padding', $position);
+
+  @if(type-of($p) == 'string') {
+    #{$p}: #{map-get($sizes, $size)};
+  }
+  @else {
+      @if($position == 'every') {
+        padding: #{map-get($sizes, $size)};
+      }
+      @else {
+        #{map-get($p, "1")}: #{map-get($sizes, $size)};
+        #{map-get($p, "2")}: #{map-get($sizes, $size)};
+      }
+  }
+}

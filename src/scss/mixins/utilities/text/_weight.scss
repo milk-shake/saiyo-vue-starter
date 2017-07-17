@@ -1,0 +1,3 @@
+@mixin is-weight-text($weight) {
+  font-weight: map-get($weights, $weight);
+}

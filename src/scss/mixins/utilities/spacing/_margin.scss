@@ -1,0 +1,16 @@
+@mixin has-margin($size, $position) {
+  $m: positions('margin', $position);
+
+  @if(type-of($m) == 'string') {
+    #{$m}: #{map-get($sizes, $size)};
+  }
+  @else {
+      @if($position == 'every') {
+        margin: #{map-get($sizes, $size)};
+      }
+      @else {
+        #{map-get($m, "1")}: #{map-get($sizes, $size)};
+        #{map-get($m, "2")}: #{map-get($sizes, $size)};
+      }
+  }
+}

@@ -1,0 +1,17 @@
+@mixin has-border($size, $color, $position) {
+  $b: map-get($positions, $position);
+  @if(type-of($b) == 'string') {
+    #{positions('border', $b)}: #{map-get($sizes, $size) / 8} solid #{map-get($colors, $color)};
+  }
+  @else {
+    @if($position == 'every') {
+        border: #{map-get($sizes, $size) / 8} solid #{map-get($colors, $color)};
+    }
+    @else {
+      $b1: positions('border', map-get($b, '1'));
+      $b2: positions('border', map-get($b, '2'));
+      #{$b1}: #{map-get($sizes, $size) / 8} solid #{map-get($colors, $color)};
+      #{$b2}: #{map-get($sizes, $size) / 8} solid #{map-get($colors, $color)};
+    }
+  }
+}

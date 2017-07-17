@@ -1,0 +1,65 @@
+@mixin from($device) {
+  @media screen and (min-width: map-get($media, $device)) {
+    @content;
+  }
+}
+
+@mixin until($device) {
+  @media screen and (max-width: map-get($media, $device) - 1px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: map-get($media, 'tablet') - 1px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: map-get($media, 'tablet')), print {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media screen and (min-width: map-get($media, 'tablet')) and (max-width:map-get($media, 'desktop') - 1px) {
+    @content;
+  }
+}
+
+@mixin touch {
+  @media screen and (max-width: map-get($media, 'desktop') - 1px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: map-get($media, 'desktop')) {
+    @content;
+  }
+}
+
+@mixin desktop-only {
+  @media screen and (min-width: map-get($media, 'desktop')) and (max-width: map-get($media, 'widescreen') - 1px) {
+    @content;
+  }
+}
+
+@mixin widescreen {
+  @media screen and (min-width: map-get($media, 'widescreen')) {
+    @content;
+  }
+}
+
+@mixin widescreen-only {
+  @media screen and (min-width: map-get($media, 'widescren')) and (max-width: map-get($media, 'fullhd') - 1px) {
+    @content;
+  }
+}
+
+@mixin fullhd {
+  @media screen and (min-width: map-get($media, 'fullhd')) {
+    @content;
+  }
+}

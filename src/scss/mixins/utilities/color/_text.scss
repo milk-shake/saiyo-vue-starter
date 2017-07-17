@@ -1,0 +1,3 @@
+@mixin has-colored-text($color) {
+  color: #{map-get($colors, $color)};
+}

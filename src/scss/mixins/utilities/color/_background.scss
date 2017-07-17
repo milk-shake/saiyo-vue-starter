@@ -1,0 +1,4 @@
+@mixin has-colored-bg($color, $alpha: 1) {
+  background-color: rgba(map-get($colors, $color), $alpha);
+  color: rgba(findColorInvert(map-get($colors, $color)), $alpha);
+}
