@@ -1,6 +1,6 @@
-# cream-front
+# Saiyo Vue Starter Kit
 
-> Front end for Cream
+> Starter kit including Saiyo, Vue, VueX, Vuelidate, Vue Router and Vue i18n
 
 ## Build Setup
 
