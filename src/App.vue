@@ -10,9 +10,12 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+@import './scss/master';
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  @include has-colored-bg('black');
+  min-height: 100vh;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

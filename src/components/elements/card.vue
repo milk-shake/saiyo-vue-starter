@@ -1,13 +1,14 @@
 <template>
   <div class="card">
     <div class="card__header">
+      <span class="card__header-title"><slot name="header-title"></slot></span>
       <slot name="header"></slot>
     </div>
     <div class="card__content">
       <slot name="content"></slot>
     </div>
     <div class="card__footer">
-      <slot name="footer"></slot>
+      <slot name="footer" ></slot>
     </div>
   </div>
 </template>
@@ -23,14 +24,14 @@
 }
 
 .card__header {
-  border-bottom: map-get($sizes, 'tiny') solid map-get($colors, 'grey');
+  @include has-padding('small', 'every');
+  @include has-padding('medium', 'top');
   align-items: stretch;
   display: flex;
 }
 
 .card__header-title {
   @include has-colored-text('black');
-  @include has-padding('xsmall', 'every');
   align-items: center;
   display: flex;
   flex-grow: 1;
@@ -59,7 +60,8 @@
 }
 
 .card__footer {
-  @include has-border('tiny', 'grey', 'top');
+  @include has-padding('small', 'every');
+  @include has-padding('medium', 'top');
   align-items: stretch;
   display: flex;
 }

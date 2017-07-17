@@ -35,14 +35,14 @@ $control-radius-small: $radius-small !default;
 
 // The controls sizes use mixins so they can be used at different breakpoints
 @mixin control-small {
+  @include has-sized-text('small');
   border-radius: $control-radius-small;
-  font-size: $size-small;
 }
 
 @mixin control-medium {
-  font-size: $size-medium;
+  @include has-sized-text('medium');
 }
 
 @mixin control-large {
-  font-size: $size-large;
+  @include has-sized-text('large');
 }
