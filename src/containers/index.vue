@@ -1,9 +1,4 @@
 <template>
-  <sai-container>
-   <sai-notification :color="'red'">
-      <p>notification dude</p>
-   </sai-notification>
-  </sai-container>
 </template>
 <style>
 html, body {
@@ -12,12 +7,10 @@ html, body {
 }
 </style>
 <script>
-  import { saiContainer, saiSection, saiLevel, saiLevelSection, saiLevelItem } from '../components/wrappers'
-  import { saiNotification } from '../components/elements'
   export default {
     props: [],
     mixins: [],
-    components: { saiContainer, saiSection, saiLevel, saiLevelSection, saiLevelItem, saiNotification },
+    components: {},
     data () {
       return {}
     },
